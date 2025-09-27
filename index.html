@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="https://i.postimg.cc/MKTqMW3B/robot-2223214.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spectra</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap">
@@ -48,10 +49,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background: 
+                linear-gradient(135deg, #000000 0%, #050510 100%);
         }
         
         .background-overlay {
@@ -60,7 +59,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(5, 5, 16, 0.85) 0%, rgba(10, 10, 22, 0.85) 100%);
+            
         }
         
         .content-wrapper {
@@ -71,35 +70,96 @@
         header {
             text-align: center;
             padding: 2rem;
-            background: rgba(5, 5, 15, 0.7);
-            border-bottom: 2px solid var(--accent-primary);
+            background: rgba(10, 10, 25, 0.9);
+            border-bottom: 1px solid rgba(0, 245, 255, 0.3);
             position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Logo styling */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .bueec-logo {
+            width: 80px;
+            height: 80px;
+            background: rgba(0, 245, 255, 0.1);
+
+            border-radius: 5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            text-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
+            transition: all 0.3s ease;
+            animation: logoGlow 3s infinite alternate;
         }
         
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
+
+        .bueec-logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(0, 245, 255, 0.4);
+        }
+
+        @keyframes logoGlow {
+            from { 
+                box-shadow: 0 0 10px rgba(0, 245, 255, 0.3);
+                border-color: var(--accent-primary);
+            }
+            to { 
+                box-shadow: 0 0 20px rgba(0, 245, 255, 0.6);
+                border-color: var(--accent-tertiary);
+            }
+        }
+
+        /* If you have an actual logo image, use this instead */
+        .bueec-logo img {
             width: 100%;
             height: 100%;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(21, 21, 21, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(21, 21, 21, 0.1) 0%, transparent 50%);
-            z-index: -1;
+            object-fit: contain;
+            border-radius: 5%;
+        }
+
+        .header-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .organizer-info {
+            font-size: 1rem;
+            color: var(--accent-tertiary);
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+        
+        .organizer-name {
+            color: var(--accent-primary);
+            font-weight: 700;
+            text-shadow: 0 0 5px rgba(0, 245, 255, 0.3);
         }
         
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin: 0;
-            text-shadow: 0 0 10px var(--accent-primary);
-            animation: pulse 3s infinite;
-            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: var(--text-light);
+            text-shadow: 0 0 5px rgba(0, 245, 255, 0.2);
+            font-weight: 700;
+        }
+        
+        .event-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-weight: 400;
         }
         
         /* Countdown Timer Styles */
@@ -166,49 +226,13 @@
         }
         
         @keyframes pulse {
-            0% { text-shadow: 0 0 10px var(--accent-primary); }
-            50% { text-shadow: 0 0 20px var(--accent-primary), 0 0 30px var(--accent-tertiary); }
-            100% { text-shadow: 0 0 10px var(--accent-primary); }
+            0% { text-shadow: 0 0 5px rgba(0, 245, 255, 0.2); }
+            50% { text-shadow: 0 0 8px rgba(0, 245, 255, 0.4); }
+            100% { text-shadow: 0 0 5px rgba(0, 245, 255, 0.2); }
         }
         
         nav {
-            display: flex;
-            justify-content: center;
-            background: rgba(10, 10, 25, 0.9);
-            padding: 1rem;
-            border-bottom: 1px solid rgba(0, 245, 255, 0.3);
-            backdrop-filter: blur(10px);
-        }
-        
-        nav a {
-            color: var(--text-light);
-            text-decoration: none;
-            margin: 0 1rem;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            transition: all 0.3s;
-            font-weight: 700;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        nav a::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent-primary);
-            transition: width 0.3s;
-        }
-        
-        nav a:hover {
-            color: var(--accent-primary);
-        }
-        
-        nav a:hover::before {
-            width: 100%;
+            display: none;
         }
         
         main {
@@ -324,24 +348,21 @@
             box-shadow: 0 0 15px var(--accent-secondary);
         }
         
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            nav a {
-                margin: 0.3rem 0;
-                width: 80%;
-                text-align: center;
-            }
-            
+        @media (max-width: 768px) {            
             section {
                 padding: 1.5rem;
             }
             
             header h1 {
                 font-size: 1.8rem;
+            }
+            
+            .organizer-info {
+                font-size: 0.9rem;
+            }
+            
+            .event-subtitle {
+                font-size: 1rem;
             }
             
             section h2 {
@@ -373,6 +394,17 @@
             .countdown-container {
                 padding: 1rem;
             }
+
+            .logo-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .bueec-logo {
+                width: 60px;
+                height: 60px;
+                font-size: 1.4rem;
+            }
         }
         
         footer {
@@ -385,6 +417,21 @@
             font-size: 0.9rem;
             backdrop-filter: blur(5px);
         }
+        
+        /* Logo in footer option */
+        .footer-logo {
+            display: flex;
+            justify-content: center;   /* Center horizontally */
+            align-items: center;       /* Center vertically */
+            gap: 2rem;                 /* Space between logos */
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo img {
+            width: 80px;
+            height: auto;
+        }
+
         
         /* Floating particles for additional effect */
         .particles {
@@ -445,7 +492,19 @@
     <!-- Content wrapper -->
     <div class="content-wrapper">
         <header>
-            <h1>Get ready for Spectra—where robots rule the field! <i class="fas fa-robot"></i></h1>
+            <div class="logo-container">
+                <div class="bueec-logo">
+                    <!-- Replace this with your actual logo image -->
+                    <img src="https://i.postimg.cc/prGL7dkq/Untitled-design-8-1.png" alt="BUEEC Logo">
+                </div>
+                <div class="header-content">
+                    <div class="organizer-info">
+                        Organized by <span class="organizer-name">BRACU EEE Club</span>
+                    </div>
+                    <h1>Spectra 2025 <i class="fas fa-robot"></i></h1>
+                    <div class="event-subtitle">Robotics Competition</div>
+                </div>
+            </div>
             
             <!-- Countdown Timer -->
             <div class="countdown-container">
@@ -472,7 +531,7 @@
                 </div>
             </div>
         </header>
-        <nav>
+        <nav style="display: none;">
             <a href="#soccer-bot">Soccer Bot</a>
             <a href="#racing-bot">Racing Bot</a>
             <a href="#cozmo-clench">Cozmo Clench Robot</a>
@@ -519,8 +578,13 @@
             </section>
         </main>
         <footer>
+            <div class="footer-logo">
+                <img src="https://i.postimg.cc/DZqcn33z/Chat-GPT-Image-Sep-28-2025-02-12-05-AM.png" alt="BRACU Logo">
+                <img src="https://i.postimg.cc/qMYmbKht/logo-highres-cropped.png" alt="Spectra Logo">
+            </div>
             <p>BRACU EEE Club Robotics Competition &copy; 2025 | Spectra</p>
         </footer>
+
     </div>
 
     <script>
