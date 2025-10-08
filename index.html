@@ -478,6 +478,22 @@
             color: var(--dark-bg);
             box-shadow: 0 0 15px var(--accent-secondary);
         }
+        a.rulebook {
+            display: inline-block;
+            text-decoration: none;
+            border: 2px solid var(--accent-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            color: var(--accent-primary);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        a.rulebook:hover {
+            background: var(--accent-primary);
+            color: var(--dark-bg);
+            box-shadow: 0 0 15px var(--accent-primary);
+        }
 
     </style>
 </head>
@@ -541,7 +557,12 @@
                 <h2>Soccer Bot (Robo Soccer)</h2>
                 <p>Compete with your soccer-playing robots in thrilling matches on the field!</p>
                 <div class="buttons">
-                    <button class="rulebook">View Rulebook <i class="fas fa-book"></i></button>
+                    <a class="rulebook"
+                    href="https://drive.google.com/file/d/1TylrtkMTQsXOaZusxfGdZBfhnHvpEw-P/view"
+                    target="_blank"
+                    >
+                    View Rulebook <i class="fas fa-book"></i>
+                    </a>
                     <a class="apply"
                     href="/soccerbot/"
                     rel="noopener">
@@ -577,8 +598,8 @@
         </main>
         <footer>
             <div class="footer-logo">
-                <img src="https://i.postimg.cc/DZqcn33z/Chat-GPT-Image-Sep-28-2025-02-12-05-AM.png" alt="BRACU Logo">
-                <img src="https://i.postimg.cc/qMYmbKht/logo-highres-cropped.png" alt="Spectra Logo">
+                <img src="https://i.postimg.cc/MTW7cXgP/3-BRACU-White.png" alt="BRACU Logo">
+                <img src="https://i.postimg.cc/JhgQFRFQ/Logo-Logo-for-black-bg-1.png" alt="Spectra Logo">
             </div>
             <p>BRACU EEE Club Robotics Competition &copy; 2025 | Spectra</p>
         </footer>
@@ -681,10 +702,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
